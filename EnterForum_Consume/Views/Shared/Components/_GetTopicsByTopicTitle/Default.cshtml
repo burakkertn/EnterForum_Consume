@@ -1,0 +1,35 @@
+﻿@model List<EnterForum_Consume.Dtos.Topic.ResultTopicDto>
+<div class='col-md-8'>
+    @foreach(var item in Model)
+    {
+    <!-- POSTS -->
+    <div class="post">
+        <div class="wrap-ut pull-left">
+            <div class="userinfo pull-left">
+                <div class="avatar">
+                    <img src="~/forum/images/avatar.jpg" alt="">
+                    <div class="status green">&nbsp;</div>
+                </div>
+
+            </div>
+            <div class="posttext pull-left">
+                    <h2><a href="/Technology/Detail1/@item.TopicID">@item.Title</a></h2>
+                <small>Friday at 10:05 am</small>
+                <div class="post-content m-t-15">
+                    <p>
+                        @item.Description
+                    </p>
+                </div>
+                <div class="tag">
+                    <span class="badge badge-color1">Yorum Yap</span>
+                
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+       
+        <div class="clearfix"></div>
+    </div>
+    }
+</div>

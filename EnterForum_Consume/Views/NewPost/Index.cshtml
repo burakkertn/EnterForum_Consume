@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadPartial")
+<body>
+    <div class="container-fluid">
+        <section class="headernav">
+
+            <div class="navbar">
+                <a href="index.html"><h3>Enter Forum</h3></a>
+                @await Component.InvokeAsync("_NavbarPartial")
+                @await Component.InvokeAsync("_SearchPartial")
+                @await Component.InvokeAsync("_Navbar2Partial")
+            </div>
+
+        </section>
+        <br/>
+        <section class="content">
+
+            <div class="container m-t-15">
+                <div class='col-md-8'>
+                    <!-- New POSTS -->
+                    @await Component.InvokeAsync("_PostPartial")
+
+
+                </div>
+                @await Component.InvokeAsync("_CategoriesPartial")
+            </div>
+        </section>
+    </div>
+
+
+    </div>
+    @await Component.InvokeAsync("_FooterPartial")
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- get jQuery from the google apis -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>
+
+</html>

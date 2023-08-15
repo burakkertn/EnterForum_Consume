@@ -1,0 +1,91 @@
+﻿﻿<div class="navbar-profile">
+    <div class="avatar-dropdown">
+        <a data-toggle="dropdown" href="#">
+            <img src="~/forum/images/avatar.jpg" alt="Avatar">
+        </a>
+        <b class="caret"></b>
+        <div class="status green"></div> <!-- Boşluk yerine belirli bir içerik olabilir -->
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Profilim</a></li>
+            <li><a href="#">Gelen Kutusu</a></li>
+            <li><a href="#">Çıkış Yap</a></li>
+            <li><a href="#">Kayıt Ol</a></li>
+        </ul>
+    </div>
+    <div class="envelope-icon"><i class="fa fa-envelope"></i></div>
+</div>
+
+
+
+<style>
+
+    .navbar-profile {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar-dropdown {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+        .avatar-dropdown a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .avatar-dropdown img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+    .caret {
+        border: solid #000;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 4px;
+        transform: rotate(45deg);
+        margin-left: 5px;
+    }
+
+    .status {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: green;
+        margin-left: 10px;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: #fff;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li {
+        padding: 10px;
+    }
+
+    .envelope-icon {
+        margin-left: auto;
+        font-size: 20px;
+        color: #333;
+    }
+
+</style>

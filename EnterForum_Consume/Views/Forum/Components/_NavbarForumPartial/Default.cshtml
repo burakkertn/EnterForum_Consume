@@ -1,0 +1,11 @@
+﻿@model List<EnterForum_Consume.Dtos.Category.ResultCategoryDto>
+
+
+<div>
+    <ul class="navbar-nav">
+        @foreach (var item in Model)
+        {
+            <li><a href="/Forum/@item.categoryName/@item.categoryID">@item.categoryName</a></li>
+        }
+    </ul>
+</div>

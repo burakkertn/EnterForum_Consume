@@ -1,0 +1,96 @@
+﻿@model EnterForum_Consume.Dtos.Topic.ResultTopicDto
+@{
+    Layout = null;
+}
+
+
+<!doctype html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadPartial")
+<body>
+    <div class="container-fluid">
+        <section class="headernav">
+
+            <div class="navbar">
+                <a href="index.html"><h3>Enter Forum</h3></a>
+                @await Component.InvokeAsync("_NavbarPartial")
+                @await Component.InvokeAsync("_SearchPartial")
+                @await Component.InvokeAsync("_Navbar2Partial")
+            </div>
+
+        </section>
+        <br />
+
+
+        <section class="content">
+
+            <div class="container m-t-15">
+                ﻿<div class='col-md-8'>
+                    <!-- POSTS -->
+
+                    <div class="post">
+                        <div class="topwrap">
+                            <div class="userinfo pull-left">
+                                <div class="avatar">
+                                    <img src="~/forum/images/avatar.jpg" alt="">
+                                    <div class="status green">&nbsp;</div>
+                                </div>
+                            </div>
+                            <div class="posttext pull-left">
+                                <h2>This is detail title of a post </h2>
+                                <div class="posted"><i class="fa fa-clock-o"></i> Posted on : 20 Nov  9:30am</div>
+                                <div class="tag">
+                                    <span class="badge badge-color1">Share Investment</span>
+                                    <span class="badge badge-color2">General Idea</span>
+                                </div>
+                                <div class='text-light m-t-15'>
+                                </div>
+                                <hr />
+                                <p>
+                                    @Model.Description
+                                </p>
+                            </div>
+                            <div class="clearfix"></div>
+
+
+                        </div>
+                        <div class="postinfobot">
+
+                            <div class="likeblock pull-left">
+                                <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>25</a>
+                                <!-- <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>3</a> -->
+                            </div>
+
+                            <div class="next pull-right">
+                                <span class="m-r-15">
+                                    <i class="fa fa-share" aria-hidden="true"></i> Share
+                                </span>
+                                <span>
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                                </span>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        @await Component.InvokeAsync("_CommentsPartial")
+                    </div>
+
+                </div>
+
+                @await Component.InvokeAsync("_CategoriesPartial")
+            </div>
+        </section>
+    </div>
+
+
+    </div>
+    @await Component.InvokeAsync("_FooterPartial")
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- get jQuery from the google apis -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>
+
+</html>
