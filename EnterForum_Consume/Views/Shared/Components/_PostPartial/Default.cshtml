@@ -1,9 +1,9 @@
 ﻿<div class="post">
-    <form action="#" class="form newtopic" method="post">
+    <form asp-action="AddPost" class="form newtopic" method="post">
         <div class="topwrap">
             <div class="userinfo pull-left">
                 <div class="avatar">
-                    <img src="~/Forum/images/avatar.jpg" alt="">
+                    <img src="~/Forum/images/avatar.png" alt="">
                     <div class="status green">&nbsp;</div>
                 </div>
 
@@ -14,22 +14,24 @@
             <div class="posttext pull-left">
 
                 <div>
-                    <input type="text" placeholder="Başlık" class="form-control">
+                    <input type="text" name="title" placeholder="Başlık" class="form-control">
                 </div>
 
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <select name="category" id="category" class="form-control">
-                            <option value="" disabled="" selected="">Kategori Seç</option>
-                            <option value="op1">Option1</option>
-                            <option value="op2">Option2</option>
+                        <select class="form-check" name="topicTitleId">
+                            <option value=" ">Lütfen Başlık Seçiniz</option>
+                            @foreach (var topicTitle in ViewBag.TopicTitles)
+                            {
+                                <option value="@topicTitle.Value">@topicTitle.Text</option>
+                            }
                         </select>
                     </div>
 
                 </div>
 
                 <div>
-                    <textarea name="desc" id="desc" placeholder="Açıklama" class="form-control"></textarea>
+                    <textarea name="description" id="desc" placeholder="Açıklama" class="form-control"></textarea>
                 </div>
 
             </div>

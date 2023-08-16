@@ -15,9 +15,9 @@ namespace EnterForum_Consume.ViewComponents.Default
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            ViewBag.Id = id;
+            int id = (int)TempData["DetailId"];
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"http://localhost:5074/api/Comment/GetTopicById?id={id}");
             if (responseMessage.IsSuccessStatusCode)
@@ -31,4 +31,4 @@ namespace EnterForum_Consume.ViewComponents.Default
 
     }    
         }
-}
+

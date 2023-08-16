@@ -23,7 +23,7 @@ namespace EnterForum_Consume.ViewComponents.World
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultTopicTitleDto>>(jsonData);
-                var filteredValues = values.Where(x => x.CategoryID == 5).ToList();
+                var filteredValues = values.Where(x => x.CategoryID == 7).ToList();
                 return View(filteredValues);
             }
             return View();

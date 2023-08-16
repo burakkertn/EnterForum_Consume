@@ -19,7 +19,7 @@ namespace EnterForum_Consume.Controllers
         }
         public async Task<IActionResult> Detail1(int id)
         {
-
+            TempData["idForCommentShop"] = id;
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"http://localhost:5074/api/Topic/{id}");
             if (responseMessage.IsSuccessStatusCode)

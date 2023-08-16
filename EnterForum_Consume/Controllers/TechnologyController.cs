@@ -19,7 +19,9 @@ namespace EnterForum_Consume.Controllers
         }
         public async Task<IActionResult> Detail1(int id)
         {
-
+            TempData["DetailId"] = id; //Hangi konu içinse o konunun id'si
+            TempData["idForComment"] = id;
+            //TempData["ControllerName"] = "Technology";
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"http://localhost:5074/api/Topic/{id}");
             if (responseMessage.IsSuccessStatusCode)
@@ -30,5 +32,6 @@ namespace EnterForum_Consume.Controllers
             }
             return View();
         }
+
     }
 }
